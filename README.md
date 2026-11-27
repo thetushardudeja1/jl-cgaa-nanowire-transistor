@@ -3,6 +3,8 @@
 **3D electrothermal TCAD shows that the gate removes 91% of the dissipated power in the reference device. Lowering the source/drain thermal boundary resistance can reverse that, and the resistance ratio at which the reversal happens depends on the effective thermal conductivity of the silicon.**
 
 > **Publication status: manuscript in preparation.** A manuscript reporting this work by **Tushar Dudeja and Nawaz Shafi** (Vellore Institute of Technology), *"Heat Extraction and Thermal Boundary Effects in a 14-nm-Gate-Length Junctionless Gate-All-Around Silicon Nanowire Transistor"*, is being prepared for **IEEE Access**. This repository summarizes the study, with figures posted by the authors. Simulation decks, meshes, SPICE cards and raw data are **not released** (see [What is not released](#what-is-not-released-and-why)).
+>
+> This work may be submitted to the IEEE for possible publication. Copyright may be transferred without notice, after which this version may no longer be accessible.
 
 <p align="center"><img src="figures/fig_thermal_map.png" width="520" alt="Temperature field in the nanowire transistor"></p>
 <p align="center"><em>Figure 1. Temperature field at V<sub>GS</sub> = 1.0 V and V<sub>DS</sub> = 0.7 V: (a) external view and (b) axial section, on a 300-319.3 K scale.</em></p>
