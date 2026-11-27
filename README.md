@@ -2,7 +2,10 @@
 
 **3D electrothermal TCAD shows that the gate removes 91% of the dissipated power in the reference device. Lowering the source/drain thermal boundary resistance can reverse that, and the resistance ratio at which the reversal happens depends on the effective thermal conductivity of the silicon.**
 
-> **Publication status: manuscript in preparation.** A manuscript reporting this work by **Tushar Dudeja and Nawaz Shafi** (Vellore Institute of Technology), *"Heat Extraction and Thermal Boundary Effects in a 14-nm-Gate-Length Junctionless Gate-All-Around Silicon Nanowire Transistor"*, is being prepared for **IEEE Access**. This repository summarizes the study. Simulation decks, meshes, SPICE cards, raw data and figures are **not released** before publication (see [What is not released](#what-is-not-released-and-why)).
+> **Publication status: manuscript in preparation.** A manuscript reporting this work by **Tushar Dudeja and Nawaz Shafi** (Vellore Institute of Technology), *"Heat Extraction and Thermal Boundary Effects in a 14-nm-Gate-Length Junctionless Gate-All-Around Silicon Nanowire Transistor"*, is being prepared for **IEEE Access**. This repository summarizes the study, with figures posted by the authors. Simulation decks, meshes, SPICE cards and raw data are **not released** (see [What is not released](#what-is-not-released-and-why)).
+
+<p align="center"><img src="figures/fig_thermal_map.png" width="520" alt="Temperature field in the nanowire transistor"></p>
+<p align="center"><em>Figure 1. Temperature field at V<sub>GS</sub> = 1.0 V and V<sub>DS</sub> = 0.7 V: (a) external view and (b) axial section, on a 300-319.3 K scale.</em></p>
 
 ---
 
@@ -51,6 +54,9 @@ The 148 W/(m·K) silicon value is a bulk-like reference, not a measurement of a 
 
 The gate is the dominant heat path, so the channel temperature follows the gate boundary condition.
 
+<p align="center"><img src="figures/fig_selfheating.png" width="720" alt="Self-heating"></p>
+<p align="center"><em>Figure 2. Self-heating at V<sub>DS</sub> = 0.7 V: (a) isothermal and self-heated transfer curves, with a 2.4% current reduction at 0.7 V; (b) peak rise versus gate bias, reaching 15.03 K at 0.7 V.</em></p>
+
 ### 4.2 Changing the boundaries
 
 Reducing each boundary resistance tenfold, at fixed bias:
@@ -59,6 +65,9 @@ Reducing each boundary resistance tenfold, at fixed bias:
 |---|---|
 | Source/drain boundary resistance ÷10 | 42.6% lower |
 | Gate boundary resistance ÷10 | 70.5% lower |
+
+<p align="center"><img src="figures/fig_boundaries.png" width="820" alt="Thermal boundary comparisons"></p>
+<p align="center"><em>Figure 3. Thermal-boundary comparisons at V<sub>DS</sub> = 0.7 V. "S/D 10x" and "Gate 10x" reduce the respective boundary resistance tenfold. (a) Integrated heat extraction at V<sub>GS</sub> = 0.7 V (percentages: gate heat / electrical power); (b) peak rise vs gate bias; (c) temperature reduction (solid) and power change (hatched) relative to the reference.</em></p>
 
 **Crossover.** Lowering the source/drain boundary resistance far enough makes the ends, not the gate, the main heat path. The point where the gate removes exactly half the heat falls between these source/drain-to-gate resistance ratios:
 
@@ -69,11 +78,17 @@ Reducing each boundary resistance tenfold, at fixed bias:
 
 Because the crossover moves by almost an order of magnitude with the internal conductivity, **contact area alone cannot determine which path dominates**. Lower silicon conductivity restricts axial heat spreading toward the gated region and shifts the resistance ratio at which end extraction competes with the gate.
 
+<p align="center"><img src="figures/fig_crossover.png" width="760" alt="Conductivity, crossover and network comparison"></p>
+<p align="center"><em>Figure 4. (a) Peak rise and (b) gate heat / electrical power vs silicon thermal conductivity at reference boundaries. (c) Gate share vs source/drain-to-gate boundary-resistance ratio; shading marks the crossover intervals (0.085-0.100 at 148 and 0.011-0.014 at 10 W/(m·K)). (d) Thermal-network vs TCAD peak rise, compared after the TCAD calculations; the ±10% band is a visual guide, not an accuracy guarantee.</em></p>
+
 ### 4.3 Numerical checks
 
 - **Mesh:** across three meshes, the peak temperature rise varies by 0.37% and the gate heat fraction stays at 91.12-91.15%.
 - **Thermal network:** on coupled cases it was not fitted to, the network predicts the temperature rise within 4.3% and 13.0%. It captures the trends, but it is not a substitute for TCAD.
 - **Compact models:** all 35 available output curves are reproduced below 3% RMS (worst 2.01%). An independent check at 335 K, not used in fitting, gives a worst-case RMS of 1.87%.
+
+<p align="center"><img src="figures/fig_compact_model.png" width="820" alt="Compact-model calibration"></p>
+<p align="center"><em>Figure 5. Compact-model calibration against TCAD. (a, b) nMOS/pMOS transfer curves at 0.7 V drain bias, at 300/320/350 K (black/blue/red); (c) zero-gate leakage; (d-f) output curves. Open squares are TCAD and lines are PrimeSim.</em></p>
 
 ## 5. Limitations
 
@@ -84,7 +99,7 @@ Because the crossover moves by almost an order of magnitude with the internal co
 
 ## What is not released, and why
 
-The Sentaurus decks, meshes, SPICE model cards, circuit netlists, raw data and figures are not published while the manuscript is in preparation. The input files also depend on licensed Synopsys TCAD tools and material libraries. The device parameters, methods and results above are enough to understand and assess the work. Further detail is available on request.
+The Sentaurus decks, meshes, SPICE model cards, circuit netlists and raw data are not published while the manuscript is in preparation. The input files also depend on licensed Synopsys TCAD tools and material libraries. Figures and results are posted by the authors; further detail is available on request.
 
 ## Authors
 
